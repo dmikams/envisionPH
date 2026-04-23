@@ -823,14 +823,303 @@ body {
 }
 
 /* ===========================
-   CREED BANNER
+   PRIME FRAMEWORK
    =========================== */
+    .prime-framework-section {
+      background: var(--red-dark);
+      position: relative;
+      overflow: hidden;
+      padding: 80px 0;
+    }
+
+    .prime-framework-section::before {
+      content: 'PRIME';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-display);
+      font-size: clamp(100px, 18vw, 220px);
+      color: rgba(255, 255, 255, 0.04);
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      letter-spacing: 16px;
+      line-height: 1;
+    }
+
+    .container-prime {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .prime-header {
+      margin-bottom: 48px;
+    }
+
+    .prime-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .prime-badge strong {
+      font-family: var(--font-cond);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .prime-section-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 58px);
+      line-height: 1;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .prime-intro {
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.65);
+      max-width: 460px;
+      line-height: 1.6;
+      font-family: var(--font-body);
+    }
+
+    .prime-horizontal-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+      overflow: visible;
+    }
+
+    .prime-card-compact {
+      flex: 1 1 0;         
+      min-width: 0;        
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(2px);
+      border-radius: 24px;
+      padding: 20px 14px 24px;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .prime-card-compact:hover {
+      transform: translateY(-6px);
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(197, 29, 52, 0.5);
+      box-shadow: 0 18px 28px rgba(0, 0, 0, 0.25);
+    }
+
+    .prime-icon-sm {
+      background: var(--red);
+      width: 52px;
+      height: 52px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      transition: all 0.2s;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .prime-card-compact:hover .prime-icon-sm {
+      background: var(--white);
+    }
+
+    .prime-card-compact:hover .prime-icon-sm i {
+      color: var(--red);
+    }
+
+    .prime-icon-sm i {
+      font-size: 26px;
+      color: var(--white);
+      transition: color 0.2s;
+    }
+
+    .prime-card-compact h4 {
+      font-family: var(--font-display);
+      font-size: 26px;
+      color: var(--white);
+      letter-spacing: 1px;
+      margin: 6px 0 6px;
+      line-height: 1.1;
+    }
+
+    .prime-dots-short {
+      width: 32px;
+      height: 3px;
+      background: var(--red);
+      margin: 10px 0 12px;
+      border-radius: 4px;
+    }
+
+    .prime-card-compact p {
+      font-size: 12px;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.7);
+      margin: 0;
+      font-family: var(--font-body);
+    }
+
+    @media (max-width: 1050px) {
+      .prime-horizontal-row {
+        gap: 14px;
+      }
+      .prime-card-compact {
+        padding: 16px 10px 20px;
+      }
+      .prime-icon-sm {
+        width: 46px;
+        height: 46px;
+      }
+      .prime-icon-sm i {
+        font-size: 22px;
+      }
+      .prime-letter-mini {
+        font-size: 28px;
+      }
+      .prime-card-compact h4 {
+        font-size: 22px;
+      }
+      .prime-card-compact p {
+        font-size: 11px;
+        line-height: 1.5;
+      }
+    }
+
+    @media (max-width: 880px) {
+      .prime-horizontal-row {
+        gap: 10px;
+      }
+      .prime-card-compact {
+        padding: 14px 8px 18px;
+      }
+      .prime-icon-sm {
+        width: 42px;
+        height: 42px;
+        margin-bottom: 12px;
+      }
+      .prime-icon-sm i {
+        font-size: 20px;
+      }
+      .prime-letter-mini {
+        font-size: 24px;
+      }
+      .prime-card-compact h4 {
+        font-size: 20px;
+      }
+      .prime-dots-short {
+        margin: 6px 0 8px;
+      }
+      .prime-card-compact p {
+        font-size: 10px;
+        line-height: 1.45;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .container-prime {
+        padding: 0 16px;
+      }
+      .prime-horizontal-row {
+        gap: 8px;
+      }
+      .prime-card-compact {
+        padding: 12px 6px 16px;
+        border-radius: 18px;
+      }
+      .prime-icon-sm {
+        width: 38px;
+        height: 38px;
+      }
+      .prime-icon-sm i {
+        font-size: 18px;
+      }
+      .prime-letter-mini {
+        font-size: 20px;
+      }
+      .prime-card-compact h4 {
+        font-size: 18px;
+      }
+      .prime-card-compact p {
+        font-size: 9px;
+        line-height: 1.4;
+      }
+      .prime-dots-short {
+        width: 24px;
+        height: 2px;
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
 .creed-section {
-  background: var(--red);
-  padding: 80px 24px;
+  position: relative;
+  padding: 120px 24px 160px;
+  overflow: hidden;
+  background-image: url('../img/creed.png');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+/* Dark red overlay so text stays readable */
+.creed-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    transparent 0%,
+    var(--red-dark) 130%
+  );
+  z-index: 1;
+}
+
+.creed-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--off-white) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
 }
 
 .creed-inner {
+  position: relative;
+  z-index: 3;
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
@@ -841,17 +1130,32 @@ body {
   font-size: 12px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 24px;
+  color: var(--dark);
+  margin-bottom: 32px;
 }
 
 .creed-section blockquote {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: clamp(20px, 3vw, 28px);
-  line-height: 1.6;
-  color: var(--white);
+  font-size: clamp(18px, 2.5vw, 26px);
+  line-height: 1.8;
+  color: var(--dark);
   font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .creed-section {
+    background-attachment: scroll;
+    padding-bottom: 140px;
+  }
+
+  .creed-section::after {
+    height: 140px;
+  }
+
+  .creed-section blockquote {
+    font-size: 16px;
+  }
 }
 
 /* ===========================

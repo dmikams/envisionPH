@@ -2,7 +2,7 @@
 // ENVISION PHILIPPINES — JS
 // ===========================
 
-(function() {
+(function () {
   const navbar = document.getElementById('navbar');
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('nav-links');
@@ -21,7 +21,7 @@
 
   // Hamburger menu toggle
   if (hamburger && navLinks) {
-    hamburger.addEventListener('click', function(e) {
+    hamburger.addEventListener('click', function (e) {
       e.stopPropagation();
       navLinks.classList.toggle('open');
       hamburger.classList.toggle('active');
@@ -30,14 +30,14 @@
     // Close menu when clicking on a link
     const allLinks = navLinks.querySelectorAll('a');
     allLinks.forEach(link => {
-      link.addEventListener('click', function() {
+      link.addEventListener('click', function () {
         navLinks.classList.remove('open');
         hamburger.classList.remove('active');
       });
     });
 
     // Close menu when clicking outside (optional)
-    document.addEventListener('click', function(event) {
+    document.addEventListener('click', function (event) {
       if (!navbar.contains(event.target) && navLinks.classList.contains('open')) {
         navLinks.classList.remove('open');
         hamburger.classList.remove('active');
@@ -47,7 +47,7 @@
 
   // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
       if (targetId === '#') return;
       const targetElement = document.querySelector(targetId);
@@ -64,16 +64,16 @@
   });
 })();
 
- /* Scroll fade-in animations */
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
+/* Scroll fade-in animations */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
 
-    document.querySelectorAll('.fade-in, .principle-card').forEach(el => observer.observe(el));
+document.querySelectorAll('.fade-in, .principle-card').forEach(el => observer.observe(el));
 
 // --- INTERSECTION OBSERVER: fade-in + principle cards ---
 const observerOptions = { threshold: 0.15 };
