@@ -518,8 +518,22 @@ body {
 /* ===========================
    ABOUT
    =========================== */
+
+.about-page-title {
+  padding: 120px 24px 0;
+}
+
+.about-page-title h1 {
+  font-family: var(--font-body);
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  color: var(--red-dark);
+}
+
 /* Remove old about-grid */
-.about-grid { display: none; }
+.about-grid {
+  display: none;
+}
 
 /* ---- Full-width banner image ---- */
 .about-banner {
@@ -573,7 +587,7 @@ body {
 }
 
 /* Vertical divider between items */
-.stat-icon-item + .stat-icon-item::before {
+.stat-icon-item+.stat-icon-item::before {
   content: '';
   position: absolute;
   left: 0;
@@ -631,7 +645,7 @@ body {
     display: none;
   }
 
-  .stat-icon-item + .stat-icon-item::before {
+  .stat-icon-item+.stat-icon-item::before {
     height: 60%;
     top: 20%;
   }
@@ -661,7 +675,7 @@ body {
     font-size: 40px;
   }
 
-  .stat-icon-item + .stat-icon-item::before {
+  .stat-icon-item+.stat-icon-item::before {
     display: none;
   }
 }
@@ -959,7 +973,7 @@ body {
 /* ===========================
    PRIME FRAMEWORK
    =========================== */
-  
+
 .prime-framework-section {
   background: var(--red-dark);
   position: relative;
@@ -1062,7 +1076,9 @@ body {
   max-width: 160px;
 }
 
-.prime-dots-short { display: none; }
+.prime-dots-short {
+  display: none;
+}
 
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
@@ -1076,7 +1092,7 @@ body {
     padding: 0 20px;
   }
 
-  .prime-card-compact + .prime-card-compact::before {
+  .prime-card-compact+.prime-card-compact::before {
     display: none;
   }
 }
@@ -1091,15 +1107,16 @@ body {
   }
 }
 
-    .fade-in {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.fade-in {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 .creed-section {
   position: relative;
@@ -1115,13 +1132,11 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    var(--red-dark) 0%,       
-    rgba(100, 10, 20, 0.75) 40%, 
-    rgba(100, 10, 20, 0.6) 50%,
-    var(--off-white) 90%    
-  );
+  background: linear-gradient(to bottom,
+      var(--red-dark) 0%,
+      rgba(100, 10, 20, 0.75) 40%,
+      rgba(100, 10, 20, 0.6) 50%,
+      var(--off-white) 90%);
   z-index: 1;
 }
 
@@ -1132,11 +1147,9 @@ body {
   left: 0;
   right: 0;
   height: 200px;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    var(--off-white) 90%
-  );
+  background: linear-gradient(to bottom,
+      transparent 0%,
+      var(--off-white) 90%);
   z-index: 2;
   pointer-events: none;
 }
