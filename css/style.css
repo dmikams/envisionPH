@@ -520,7 +520,7 @@ body {
    =========================== */
 
 .about-page-title {
-  padding: 120px 24px 0;
+  padding: 120px 24px 24px;
 }
 
 .about-page-title h1 {
@@ -528,6 +528,10 @@ body {
   font-size: clamp(28px, 4vw, 42px);
   font-weight: 700;
   color: var(--red-dark);
+}
+
+.about.section {
+  padding-top: 0;
 }
 
 /* Remove old about-grid */
@@ -847,26 +851,91 @@ body {
 
 
 /* ===========================
-   4E PRINCIPLES
+   4E PRINCIPLES 
    =========================== */
 .principles {
   padding: var(--section-pad);
+  background: var(--red-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background pattern */
+.principles::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at 25% 50%, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+.section-label.light {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title.light {
+  font-family: var(--font-display);
+  font-size: 64px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 64px;
+  letter-spacing: -2px;
+  line-height: 1.1;
 }
 
 .principles-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2px;
+  gap: 24px;
 }
 
 .principle-card {
-  background: var(--dark);
   padding: 40px 28px;
-  border-top: 3px solid var(--red);
-  transition: background var(--transition);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(0px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.5s ease, transform 0.5s ease, background 0.3s ease;
+  transform: translateY(40px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effect - lift and glow */
+.principle-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+}
+
+/* Animated gradient border on hover */
+.principle-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--white), transparent);
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+.principle-card:hover::before {
+  transform: scaleX(1);
 }
 
 .principle-card.visible {
@@ -874,33 +943,168 @@ body {
   transform: translateY(0);
 }
 
-.principle-card:hover {
-  background: rgba(197, 29, 52, 0.15);
-}
-
+/* Circular icon background */
 .principle-icon {
   font-family: var(--font-display);
-  font-size: 80px;
-  color: var(--red);
-  line-height: 1;
-  margin-bottom: 16px;
-  opacity: 0.7;
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 28px;
+  transition: all 0.3s ease;
 }
 
+.principle-card:hover .principle-icon {
+  background: var(--white);
+  color: var(--red-dark);
+  transform: scale(1.05);
+}
+
+/* Heading style */
 .principle-card h3 {
   font-family: var(--font-display);
-  font-size: 28px;
+  font-size: 26px;
+  font-weight: 600;
   color: var(--white);
-  margin-bottom: 12px;
-  letter-spacing: 1px;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
 }
 
+/* Paragraph text with improved readability */
 .principle-card p {
-  font-size: 14px;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.6);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.65);
 }
 
+/* Number/badge indicator */
+.principle-card .principle-number {
+  position: absolute;
+  bottom: 20px;
+  right: 24px;
+  font-family: var(--font-display);
+  font-size: 72px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.principle-card:hover .principle-number {
+  color: rgba(255, 255, 255, 0.08);
+  transform: translateX(-4px);
+}
+
+/* Staggered animation delays */
+.principle-card:nth-child(1).visible { transition-delay: 0.05s; }
+.principle-card:nth-child(2).visible { transition-delay: 0.15s; }
+.principle-card:nth-child(3).visible { transition-delay: 0.25s; }
+.principle-card:nth-child(4).visible { transition-delay: 0.35s; }
+
+/* Responsive: Tablet */
+@media (max-width: 1024px) {
+  .principles-grid {
+    gap: 20px;
+  }
+  
+  .principle-card {
+    padding: 32px 24px;
+  }
+  
+  .principle-card h3 {
+    font-size: 22px;
+  }
+  
+  .principle-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 32px;
+  }
+  
+  .section-title.light {
+    font-size: 52px;
+    margin-bottom: 48px;
+  }
+  
+  .principle-card .principle-number {
+    font-size: 56px;
+    bottom: 16px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .principles-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .principle-card {
+    padding: 32px 24px;
+  }
+  
+  .section-title.light {
+    font-size: 44px;
+    letter-spacing: -1px;
+  }
+  
+  .principle-card .principle-number {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  .principles-grid {
+    gap: 16px;
+  }
+  
+  .principle-card {
+    padding: 28px 20px;
+  }
+  
+  .principle-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .principle-card h3 {
+    font-size: 20px;
+  }
+  
+  .principle-card p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .principles-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .section-title.light {
+    font-size: 36px;
+    margin-bottom: 36px;
+  }
+  
+  .principle-card {
+    padding: 32px 24px;
+  }
+  
+  .principle-card .principle-number {
+    font-size: 56px;
+  }
+}
 /* ===========================
    PILLARS
    =========================== */
