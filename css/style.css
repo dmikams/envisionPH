@@ -849,95 +849,98 @@ body {
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* ===========================
-   COMPETENCIES
-   =========================== */
 
-.competencies {
+.comp4e {
   position: relative;
 }
 
 /* ---- Image area ---- */
-.competencies-image-wrap {
+.comp4e-image-wrap {
   position: relative;
-  height: 480px;
-  overflow: visible;
+  height: 500px;
+  overflow: visible; /* cards bleed out */
 }
 
-.competencies-image-wrap img {
+.comp4e-image-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 40%;
+  object-position: center 35%;
   display: block;
 }
 
-/* Dark overlay on image */
-.competencies-img-overlay {
+/* Overlay darkens image, heaviest at bottom where cards sit */
+.comp4e-img-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(46, 46, 48, 0.3) 0%,
-    rgba(46, 46, 48, 0.55) 60%,
-    rgba(46, 46, 48, 0.85) 100%
+    rgba(46, 46, 48, 0.2) 0%,
+    rgba(46, 46, 48, 0.45) 50%,
+    rgba(46, 46, 48, 0.75) 100%
   );
   z-index: 1;
 }
 
-/* Section badge across top */
-.competencies-image-wrap::before {
-  content: '04  OUR COMPETENCIES';
+/* Section label top-left */
+.comp4e-image-wrap::before {
+  content: 'THE 4E PRINCIPLE';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   z-index: 2;
-  background: var(--red);
+  background: var(--red-dark);
   font-family: var(--font-cond);
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   text-transform: uppercase;
   color: var(--white);
   padding: 12px 24px;
 }
 
-/* ---- 4 cards overlapping the image bottom ---- */
-.competencies-top-cards {
+/* ---- 4E Cards — overlap out of image ---- */
+.comp4e-cards {
   position: absolute;
-  bottom: -80px;
+  bottom: -90px; /* how far they overlap down */
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2px;
+  gap: 16px;
   width: 100%;
 }
 
-.comp-top-card {
-  background: rgba(160, 22, 40, 0.88);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 28px 22px;
+.comp4e-card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 32px 24px 36px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  transition: background var(--transition);
-  border-top: 3px solid rgba(255, 255, 255, 0.2);
+  gap: 12px;
+  transition: background var(--transition), transform var(--transition);
 }
 
-.comp-top-card:hover {
-  background: rgba(197, 29, 52, 0.95);
+.comp4e-card:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-4px);
 }
 
-.comp-top-card i {
-  font-size: 26px;
-  color: rgba(255, 255, 255, 0.7);
+/* Big E icon */
+.comp4e-card-icon {
+  font-family: var(--font-display);
+  font-size: 48px;
+  color: var(--white);
+  line-height: 1;
+  opacity: 0.9;
 }
 
-.comp-top-card h4 {
+.comp4e-card h4 {
   font-family: var(--font-display);
   font-size: 22px;
   color: var(--white);
@@ -945,320 +948,147 @@ body {
   line-height: 1;
 }
 
-.comp-top-card p {
+.comp4e-card p {
   font-size: 13px;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.75);
   margin: 0;
 }
 
-/* ---- Bottom dark strip — just enough to cover the card overlap ---- */
-.competencies-bottom {
+/* ---- Bottom dark strip: competencies ---- */
+.comp4e-bottom {
   background: var(--dark);
-  height: 100px;
+  padding: 130px 0 80px; /* top padding absorbs card overlap */
+}
+
+.comp4e-bottom-header {
+  margin-bottom: 48px;
+}
+
+.comp4e-bottom-label {
+  font-family: var(--font-cond);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+/* 3-column grid of competency items */
+.comp4e-bottom-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px 48px;
+}
+
+.comp4e-bottom-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.comp4e-bottom-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(197, 29, 52, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(197, 29, 52, 0.3);
+  transition: background var(--transition);
+}
+
+.comp4e-bottom-item:hover .comp4e-bottom-icon {
+  background: rgba(197, 29, 52, 0.3);
+}
+
+.comp4e-bottom-icon i {
+  font-size: 15px;
+  color: var(--red);
+}
+
+.comp4e-bottom-item h5 {
+  font-family: var(--font-cond);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.comp4e-bottom-item p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+.comp4e-bottom-item em {
+  font-style: normal;
+  color: var(--red);
 }
 
 /* ---- Responsive ---- */
 @media (max-width: 1024px) {
-  .competencies-top-cards {
+  .comp4e-cards {
     grid-template-columns: repeat(2, 1fr);
     bottom: -180px;
   }
 
-  .competencies-bottom {
-    height: 200px;
+  .comp4e-bottom {
+    padding-top: 220px;
+  }
+
+  .comp4e-bottom-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .competencies-image-wrap {
-    height: 360px;
+  .comp4e-image-wrap {
+    height: 400px;
   }
 
-  .competencies-top-cards {
+  .comp4e-cards {
     grid-template-columns: repeat(2, 1fr);
-    bottom: -220px;
+    gap: 12px;
+    bottom: -200px;
   }
 
-  .competencies-bottom {
-    height: 240px;
+  .comp4e-bottom {
+    padding-top: 240px;
+    padding-bottom: 60px;
+  }
+
+  .comp4e-bottom-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 }
 
 @media (max-width: 480px) {
-  .competencies-image-wrap {
-    height: 300px;
+  .comp4e-image-wrap {
+    height: 320px;
   }
 
-  .competencies-top-cards {
+  .comp4e-cards {
     grid-template-columns: 1fr;
-    bottom: -440px;
+    bottom: -400px;
+    gap: 8px;
   }
 
-  .competencies-bottom {
-    height: 460px;
+  .comp4e-bottom {
+    padding-top: 440px;
   }
 
-  .comp-top-card {
+  .comp4e-card {
     padding: 24px 20px;
   }
 }
 
-/* ===========================
-   4E PRINCIPLES 
-   =========================== */
-.principles {
-  padding: var(--section-pad);
-  background: var(--red-dark);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Subtle background pattern */
-.principles::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: radial-gradient(circle at 25% 50%, rgba(255,255,255,0.02) 1px, transparent 1px);
-  background-size: 40px 40px;
-  pointer-events: none;
-}
-
-.section-label.light {
-  font-family: var(--font-body);
-  font-size: 12px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
-  margin-bottom: 20px;
-  position: relative;
-  display: inline-block;
-}
-
-.section-title.light {
-  font-family: var(--font-display);
-  font-size: 64px;
-  font-weight: 600;
-  color: var(--white);
-  margin-bottom: 64px;
-  letter-spacing: -2px;
-  line-height: 1.1;
-}
-
-.principles-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
-
-.principle-card {
-  padding: 40px 28px;
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(0px);
-  border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-  opacity: 0;
-  transform: translateY(40px);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Hover effect - lift and glow */
-.principle-card:hover {
-  transform: translateY(-8px);
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
-}
-
-/* Animated gradient border on hover */
-.principle-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--white), transparent);
-  transform: scaleX(0);
-  transition: transform 0.5s ease;
-}
-
-.principle-card:hover::before {
-  transform: scaleX(1);
-}
-
-.principle-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Circular icon background */
-.principle-icon {
-  font-family: var(--font-display);
-  font-size: 40px;
-  font-weight: 700;
-  color: var(--white);
-  background: rgba(255, 255, 255, 0.1);
-  width: 72px;
-  height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  margin-bottom: 28px;
-  transition: all 0.3s ease;
-}
-
-.principle-card:hover .principle-icon {
-  background: var(--white);
-  color: var(--red-dark);
-  transform: scale(1.05);
-}
-
-/* Heading style */
-.principle-card h3 {
-  font-family: var(--font-display);
-  font-size: 26px;
-  font-weight: 600;
-  color: var(--white);
-  margin-bottom: 16px;
-  letter-spacing: -0.5px;
-}
-
-/* Paragraph text with improved readability */
-.principle-card p {
-  font-family: var(--font-body);
-  font-size: 15px;
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.65);
-}
-
-/* Number/badge indicator */
-.principle-card .principle-number {
-  position: absolute;
-  bottom: 20px;
-  right: 24px;
-  font-family: var(--font-display);
-  font-size: 72px;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.03);
-  pointer-events: none;
-  line-height: 1;
-  transition: all 0.3s ease;
-}
-
-.principle-card:hover .principle-number {
-  color: rgba(255, 255, 255, 0.08);
-  transform: translateX(-4px);
-}
-
-/* Staggered animation delays */
-.principle-card:nth-child(1).visible { transition-delay: 0.05s; }
-.principle-card:nth-child(2).visible { transition-delay: 0.15s; }
-.principle-card:nth-child(3).visible { transition-delay: 0.25s; }
-.principle-card:nth-child(4).visible { transition-delay: 0.35s; }
-
-/* Responsive: Tablet */
-@media (max-width: 1024px) {
-  .principles-grid {
-    gap: 20px;
-  }
-  
-  .principle-card {
-    padding: 32px 24px;
-  }
-  
-  .principle-card h3 {
-    font-size: 22px;
-  }
-  
-  .principle-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 32px;
-  }
-  
-  .section-title.light {
-    font-size: 52px;
-    margin-bottom: 48px;
-  }
-  
-  .principle-card .principle-number {
-    font-size: 56px;
-    bottom: 16px;
-    right: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .principles-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  
-  .principle-card {
-    padding: 32px 24px;
-  }
-  
-  .section-title.light {
-    font-size: 44px;
-    letter-spacing: -1px;
-  }
-  
-  .principle-card .principle-number {
-    font-size: 48px;
-  }
-}
-
-@media (max-width: 640px) {
-  .principles-grid {
-    gap: 16px;
-  }
-  
-  .principle-card {
-    padding: 28px 20px;
-  }
-  
-  .principle-icon {
-    width: 52px;
-    height: 52px;
-    font-size: 28px;
-    margin-bottom: 20px;
-  }
-  
-  .principle-card h3 {
-    font-size: 20px;
-  }
-  
-  .principle-card p {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .principles-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  
-  .section-title.light {
-    font-size: 36px;
-    margin-bottom: 36px;
-  }
-  
-  .principle-card {
-    padding: 32px 24px;
-  }
-  
-  .principle-card .principle-number {
-    font-size: 56px;
-  }
-}
 /* ===========================
    PILLARS
    =========================== */
