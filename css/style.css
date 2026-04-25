@@ -849,6 +849,160 @@ body {
   color: rgba(255, 255, 255, 0.6);
 }
 
+/* ===========================
+   COMPETENCIES
+   =========================== */
+
+.competencies {
+  position: relative;
+}
+
+/* ---- Image area ---- */
+.competencies-image-wrap {
+  position: relative;
+  height: 480px;
+  overflow: visible;
+}
+
+.competencies-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+}
+
+/* Dark overlay on image */
+.competencies-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(46, 46, 48, 0.3) 0%,
+    rgba(46, 46, 48, 0.55) 60%,
+    rgba(46, 46, 48, 0.85) 100%
+  );
+  z-index: 1;
+}
+
+/* Section badge across top */
+.competencies-image-wrap::before {
+  content: '04  OUR COMPETENCIES';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: var(--red);
+  font-family: var(--font-cond);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 12px 24px;
+}
+
+/* ---- 4 cards overlapping the image bottom ---- */
+.competencies-top-cards {
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  width: 100%;
+}
+
+.comp-top-card {
+  background: rgba(160, 22, 40, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: background var(--transition);
+  border-top: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.comp-top-card:hover {
+  background: rgba(197, 29, 52, 0.95);
+}
+
+.comp-top-card i {
+  font-size: 26px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.comp-top-card h4 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--white);
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.comp-top-card p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+/* ---- Bottom dark strip — just enough to cover the card overlap ---- */
+.competencies-bottom {
+  background: var(--dark);
+  height: 100px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .competencies-top-cards {
+    grid-template-columns: repeat(2, 1fr);
+    bottom: -180px;
+  }
+
+  .competencies-bottom {
+    height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .competencies-image-wrap {
+    height: 360px;
+  }
+
+  .competencies-top-cards {
+    grid-template-columns: repeat(2, 1fr);
+    bottom: -220px;
+  }
+
+  .competencies-bottom {
+    height: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .competencies-image-wrap {
+    height: 300px;
+  }
+
+  .competencies-top-cards {
+    grid-template-columns: 1fr;
+    bottom: -440px;
+  }
+
+  .competencies-bottom {
+    height: 460px;
+  }
+
+  .comp-top-card {
+    padding: 24px 20px;
+  }
+}
 
 /* ===========================
    4E PRINCIPLES 
