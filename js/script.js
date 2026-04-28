@@ -235,3 +235,88 @@ window.addEventListener('scroll', () => {
   }, { passive: true });
 
 })();
+
+class NumberCounter {
+  constructor(element, targetValue, hasPlus = false) {
+    this.element = element;
+    this.target = targetValue;
+    this.hasPlus = hasPlus;
+    this.current = 0;
+    this.shufflePhase = true;
+    this.shuffleSteps = 15;
+    this.currentStep = 0;
+  }
+  
+  start() {
+    this.animate();
+  }
+  
+  animate() {
+    if (this.shufflePhase) {
+      // Random numbers between 0 and target+100
+      const randomVal = Math.floor(Math.random() * (this.target + 100));
+      this.element.innerText = randomVal + (this.hasPlus ? '+' : '');
+      this.currentStep++;
+      
+      if (this.currentStep >= this.shuffleSteps) {
+        this.shufflePhase = false;
+        this.currentStep = 0;
+        this.startTime = performance.now();
+        this.countUp();
+      } else {
+        requestAnimationFrame(() => setTimeout(() => this.animate(), 40));
+      }
+    }
+  }
+  
+  countUp() {
+    const duration = 1500;
+    const now = performance.now();
+    const elapsed = now - this.startTime;
+    const progress = Math.min(1, elapsed / duration);
+    
+    // Easing function
+    const ease = 1 - Math.pow(1 - progress, 4);
+    const value = Math.floor(ease * this.target);
+    
+    this.element.innerText = value + (this.hasPlus ? '+' : '');
+    
+    if (progress < 1) {
+      requestAnimationFrame(() => this.countUp());
+    } else {
+      this.element.innerText = this.target + (this.hasPlus ? '+' : '');
+    }
+  }
+}
+
+// Initialize all counters
+function initNumberCounters() {
+  const statNumbers = document.querySelectorAll('.stat-number');
+  const counters = [];
+  
+  statNumbers.forEach(el => {
+    const text = el.innerText;
+    const match = text.match(/(\d+)(\+?)/);
+    if (match) {
+      const target = parseInt(match[1]);
+      const hasPlus = match[2] === '+';
+      const counter = new NumberCounter(el, target, hasPlus);
+      counters.push(counter);
+    }
+  });
+  
+  // Trigger when in view
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        counters.forEach(counter => counter.start());
+        observer.disconnect(); // Only trigger once
+      }
+    });
+  }, { threshold: 0.3 });
+  
+  const section = document.querySelector('.chapters-map');
+  if (section) observer.observe(section);
+}
+
+document.addEventListener('DOMContentLoaded', initNumberCounters);
