@@ -30,22 +30,21 @@
     </div>
   </nav>
 
-  <section class="hero" style="min-height: 60vh;">
-    <div class="hero-content">
-      <p class="hero-eyebrow">Envision Philippines</p>
-      <h1 class="hero-headline"><span class="line">THE</span><span class="line accent">TEAM</span></h1>
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <h1>Our Team</h1>
+      <p class="page-hero-breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Team</span>
+      </p>
     </div>
   </section>
-
-  <!-- Page Title -->
-  <div class="about-page-title container">
-    <h1>Our Team</h1>
-  </div>
 
   <!-- TEAM SECTION -->
   <section id="team" class="team-section section">
     <div class="container">
-      <div class="section-label">03 — Our Team</div>
+      <div class="section-label">Our Team</div>
       <h2 class="section-title">The People Behind the Vision</h2>
 
       <div class="team-cards-grid">
@@ -118,101 +117,54 @@
   <!-- WHERE WE OPERATE -->
   <section class="chapters-map section dark-section">
     <div class="container">
-      <div class="section-label light">08 — Our Chapters</div>
+      <div class="section-label light">Our Chapters</div>
       <h2 class="section-title light">Where We Operate</h2>
 
-      <div class="chapters-map-grid">
+      <div class="chapters-map-img fade-in">
+        <img src="img/map.png" alt="Envision Philippines — Where We Operate" />
+      </div>
 
-        <!-- Left: Map SVG -->
-        <div class="map-wrap fade-in">
-          <svg viewBox="0 0 400 520" xmlns="http://www.w3.org/2000/svg" class="ph-map">
+      <!-- Right: Chapter labels -->
+      <div class="chapters-labels fade-in">
 
-            <!-- Luzon outline (simplified) -->
-            <g class="luzon-base">
-              <!-- Main Luzon body -->
-              <path
-                d="M180 30 L210 25 L240 35 L260 55 L270 80 L265 110 L275 130 L280 160 L270 185 L260 200 L265 220 L255 240 L240 255 L230 280 L220 300 L210 315 L200 330 L185 340 L170 335 L155 320 L145 305 L140 285 L145 265 L135 250 L125 235 L120 215 L115 195 L120 175 L115 155 L110 135 L115 110 L120 85 L130 65 L150 45 Z"
-                fill="#d0d0d0" stroke="#bbb" stroke-width="1" />
-              <!-- Bicol Peninsula -->
-              <path
-                d="M200 330 L210 345 L205 365 L195 380 L185 395 L175 405 L165 395 L160 380 L165 365 L175 350 L185 340 Z"
-                fill="#d0d0d0" stroke="#bbb" stroke-width="1" />
-              <!-- Bataan/Zambales -->
-              <path d="M140 200 L125 210 L115 225 L110 240 L120 250 L130 240 L135 225 L140 210 Z" fill="#d0d0d0"
-                stroke="#bbb" stroke-width="1" />
-            </g>
-
-            <!-- Tarlac highlight -->
-            <path class="map-province map-province--active"
-              d="M155 155 L175 145 L195 150 L205 165 L200 185 L185 195 L165 190 L150 178 Z" fill="var(--red)"
-              stroke="var(--red-dark)" stroke-width="1.5" opacity="0.9" />
-
-            <!-- Pampanga highlight -->
-            <path class="map-province map-province--active"
-              d="M155 195 L180 190 L200 195 L210 215 L205 232 L185 238 L165 232 L150 218 Z" fill="var(--red)"
-              stroke="var(--red-dark)" stroke-width="1.5" opacity="0.85" />
-
-            <!-- Benguet/Baguio highlight -->
-            <path class="map-province map-province--active"
-              d="M175 75 L195 68 L212 75 L218 92 L210 108 L192 112 L175 105 L168 90 Z" fill="var(--red)"
-              stroke="var(--red-dark)" stroke-width="1.5" opacity="0.9" />
-
-            <!-- Dot markers -->
-            <circle cx="183" cy="170" r="5" fill="var(--white)" stroke="var(--red)" stroke-width="2" />
-            <circle cx="183" cy="215" r="5" fill="var(--white)" stroke="var(--red)" stroke-width="2" />
-            <circle cx="193" cy="90" r="5" fill="var(--white)" stroke="var(--red)" stroke-width="2" />
-
-            <!-- Connector lines to labels -->
-            <line x1="188" y1="170" x2="230" y2="170" stroke="rgba(255,255,255,0.3)" stroke-width="1"
-              stroke-dasharray="3,3" />
-            <line x1="188" y1="215" x2="230" y2="215" stroke="rgba(255,255,255,0.3)" stroke-width="1"
-              stroke-dasharray="3,3" />
-            <line x1="198" y1="90" x2="230" y2="90" stroke="rgba(255,255,255,0.3)" stroke-width="1"
-              stroke-dasharray="3,3" />
-
-          </svg>
+        <div class="chapter-label-item">
+          <div class="chapter-label-dot"></div>
+          <div>
+            <h4>Province of Benguet</h4>
+            <ul>
+              <li>Envision Baguio</li>
+            </ul>
+          </div>
         </div>
 
-        <!-- Right: Chapter labels -->
-        <div class="chapters-labels fade-in">
-
-          <div class="chapter-label-item">
-            <div class="chapter-label-dot"></div>
-            <div>
-              <h4>Province of Benguet</h4>
-              <ul>
-                <li>Envision Baguio</li>
-              </ul>
-            </div>
+        <div class="chapter-label-item">
+          <div class="chapter-label-dot"></div>
+          <div>
+            <h4>Province of Tarlac</h4>
+            <ul>
+              <li>Envision Philippines</li>
+              <li>Envision Diocese of Tarlac</li>
+              <li>Envision Tarlac State University</li>
+            </ul>
           </div>
+        </div>
 
-          <div class="chapter-label-item">
-            <div class="chapter-label-dot"></div>
-            <div>
-              <h4>Province of Tarlac</h4>
-              <ul>
-                <li>Envision Philippines</li>
-                <li>Envision Diocese of Tarlac</li>
-                <li>Envision Tarlac State University</li>
-              </ul>
-            </div>
+        <div class="chapter-label-item">
+          <div class="chapter-label-dot"></div>
+          <div>
+            <h4>Province of Pampanga</h4>
+            <ul>
+              <li>Envision Pampanga</li>
+            </ul>
           </div>
-
-          <div class="chapter-label-item">
-            <div class="chapter-label-dot"></div>
-            <div>
-              <h4>Province of Pampanga</h4>
-              <ul>
-                <li>Envision Pampanga</li>
-              </ul>
-            </div>
-          </div>
-
         </div>
 
       </div>
+
+    </div>
     </div>
   </section>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner container">

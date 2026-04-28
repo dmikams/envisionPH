@@ -1453,6 +1453,79 @@ body {
 /* ===========================
    TEAM
    =========================== */
+.page-hero {
+  position: relative;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    var(--dark) 0%,
+    var(--red-dark) 40%,
+    var(--dark) 100%
+  );
+}
+
+/* Subtle noise/dot texture overlay */
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle at 60% 40%,
+    rgba(197, 29, 52, 0.4) 0%,
+    transparent 60%
+  ),
+  radial-gradient(
+    circle at 20% 70%,
+    rgba(46, 46, 48, 0.8) 0%,
+    transparent 50%
+  );
+  z-index: 1;
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.page-hero-content h1 {
+  font-family: var(--font-body);
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.page-hero-breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-cond);
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.page-hero-breadcrumb a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.page-hero-breadcrumb a:hover {
+  color: var(--white);
+}
+
+.page-hero-breadcrumb span {
+  color: rgba(255, 255, 255, 0.3);
+}
 
 .team-section {
   background: var(--white);
@@ -1585,26 +1658,16 @@ body {
   align-items: center;
 }
 
-/* ---- SVG Map ---- */
-.map-wrap {
-  position: relative;
-  max-width: 340px;
-  margin: 0 auto;
+.chapters-map-img {
+  display: flex;
+  justify-content: center;
 }
 
-.ph-map {
+.chapters-map-img img {
+  max-width: 500px;
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 8px 32px rgba(0,0,0,0.4));
-}
-
-.map-province {
-  transition: opacity 0.3s ease;
-}
-
-.map-province--active:hover {
-  opacity: 1 !important;
-  filter: brightness(1.2);
+  display: block;
 }
 
 /* ---- Chapter Labels ---- */
@@ -1666,6 +1729,12 @@ body {
 
   .map-wrap {
     max-width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .chapters-map-img img {
+    max-width: 320px;
   }
 }
 
