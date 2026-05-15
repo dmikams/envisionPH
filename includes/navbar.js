@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <li><a href="about.html">About</a></li>
         <li><a href="team.html">Team</a></li>
         <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="join.html">Be Involved</a></li>
       </ul>
     </div>
   </nav>

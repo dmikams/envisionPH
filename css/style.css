@@ -2346,9 +2346,6 @@ body {
 /* ===========================
    CONTACT
    =========================== */
-/* ===========================
-   CONTACT PAGE - REDESIGNED
-   =========================== */
 
 /* Contact Hero */
 .contact-hero {
@@ -2570,6 +2567,216 @@ body {
   
   .contact-detail-item i {
     margin-bottom: 8px;
+  }
+}
+
+/* ===========================
+   NAV CTA BUTTON
+   =========================== */
+
+.nav-cta {
+  background: var(--red);
+  color: var(--white) !important;
+  padding: 10px 18px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 6px 18px rgba(197, 29, 52, 0.25);
+  transition: all 0.3s ease !important;
+}
+
+.nav-cta:hover {
+  background: var(--red-dark) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(197, 29, 52, 0.35);
+}
+
+/* ===========================
+   BE INVOLVED
+   =========================== */
+
+.involvement-intro {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.involvement-desc {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #666;
+}
+
+.involvement-section {
+  padding-top: 0;
+}
+
+.involvement-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* CARD */
+
+.involve-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 36px 28px;
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+}
+
+.involve-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--red);
+  box-shadow: 0 14px 36px rgba(197,29,52,0.12);
+}
+
+.involve-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(197,29,52,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.involve-icon i {
+  font-size: 30px;
+  color: var(--red);
+}
+
+.involve-card h3 {
+  font-family: var(--font-display);
+  font-size: 30px;
+  letter-spacing: 1px;
+  color: var(--dark);
+  margin-bottom: 16px;
+}
+
+.involve-card p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #666;
+}
+
+/* ===========================
+   DONATION SECTION
+   =========================== */
+
+.donation-section {
+  background: var(--off-white);
+}
+
+.donation-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.donation-sub {
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #666;
+}
+
+.gcash-card {
+  max-width: 420px;
+  margin: 0 auto 60px;
+  background: var(--white);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+}
+
+.gcash-card img {
+  width: 100%;
+  display: block;
+  border-radius: 16px;
+}
+
+/* STEPS */
+
+.donation-steps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.donation-step {
+  background: var(--white);
+  border-radius: 18px;
+  padding: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.donation-step:hover {
+  transform: translateY(-4px);
+  border-color: var(--red);
+  box-shadow: 0 10px 24px rgba(197,29,52,0.08);
+}
+
+.donation-step span {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--red);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.donation-step p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #555;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+@media (max-width: 900px) {
+
+  .involvement-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .donation-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+
+  .involvement-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .involve-card {
+    padding: 28px 22px;
+  }
+
+  .gcash-card {
+    padding: 18px;
+  }
+
+  .donation-step {
+    padding: 20px;
   }
 }
 
