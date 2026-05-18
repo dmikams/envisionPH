@@ -256,62 +256,6 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-  #navbar {
-    padding: 0.7rem 1.5rem;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-links {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    right: 0;
-    background: var(--dark);
-    flex-direction: column;
-    align-items: stretch;
-    padding: 1.5rem;
-    gap: 0.5rem;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-    z-index: 99;
-    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .nav-links.open {
-    transform: translateX(0);
-  }
-
-  .nav-links li {
-    width: 100%;
-  }
-
-  .nav-links a {
-    font-size: 16px;
-    padding: 12px 16px;
-    width: 100%;
-    display: block;
-    text-align: center;
-  }
-
-  .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
-  }
-}
-
 /* ===========================
    HERO
    =========================== */
@@ -474,48 +418,6 @@ body {
 }
 
 /* ===========================
-   RESPONSIVE
-   =========================== */
-@media (max-width: 768px) {
-  .hero {
-    background-attachment: scroll;
-  }
-
-  .hero-line {
-    gap: 12px;
-  }
-
-  .hero-headline .word.normal {
-    font-size: clamp(44px, 12vw, 80px);
-  }
-
-  .hero-headline .word.italic {
-    font-size: clamp(40px, 11vw, 76px);
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-line {
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-
-  .hero-headline .word.normal {
-    font-size: clamp(38px, 13vw, 60px);
-  }
-
-  .hero-headline .word.italic {
-    font-size: clamp(34px, 12vw, 56px);
-  }
-}
-
-
-/* ===========================
    ABOUT
    =========================== */
 
@@ -608,62 +510,6 @@ body {
   max-width: 120px;
 }
 
-/* ---- Responsive ---- */
-@media (max-width: 900px) {
-  .about-3col {
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-  }
-
-  .about-3col-item:last-child {
-    grid-column: span 2;
-  }
-
-  .about-stats-icons {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px 0;
-    padding: 40px 0;
-  }
-
-  .stat-icon-item:nth-child(3)::before {
-    display: none;
-  }
-
-  .stat-icon-item+.stat-icon-item::before {
-    height: 60%;
-    top: 20%;
-  }
-}
-
-@media (max-width: 600px) {
-  .about-banner {
-    height: 220px;
-    margin-bottom: 40px;
-  }
-
-  .about-3col {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    margin-bottom: 48px;
-  }
-
-  .about-3col-item:last-child {
-    grid-column: span 1;
-  }
-
-  .about-stats-icons {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .stat-icon-num {
-    font-size: 40px;
-  }
-
-  .stat-icon-item+.stat-icon-item::before {
-    display: none;
-  }
-}
-
 /* ===========================
    ABOUT — What We Want To Be
    =========================== */
@@ -735,17 +581,6 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
-}
-
-@media (max-width: 768px) {
-  .about-want-body {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .about-want-img {
-    height: 220px;
-  }
 }
 
 /* ===========================
@@ -831,33 +666,6 @@ body {
 
 .vm-split-panel.reverse .vm-split-text p {
   color: rgba(255, 255, 255, 0.75);
-}
-
-@media (max-width: 768px) {
-
-  .vm-split-panel,
-  .vm-split-panel.reverse {
-    grid-template-columns: 1fr;
-  }
-
-  .vm-split-img {
-    height: 220px;
-    order: 0 !important;
-  }
-
-  .vm-split-fade {
-    background: linear-gradient(to bottom, transparent 50%, var(--white) 100%) !important;
-  }
-
-  .vm-split-panel.reverse .vm-split-fade {
-    background: linear-gradient(to bottom, transparent 50%, var(--dark) 100%) !important;
-  }
-
-  .vm-split-text,
-  .vm-split-panel.reverse .vm-split-text {
-    order: 1 !important;
-    padding: 28px 24px;
-  }
 }
 
 /* ===========================
@@ -1097,64 +905,6 @@ body {
   color: var(--red);
 }
 
-/* ---- Responsive ---- */
-@media (max-width: 1024px) {
-  .comp4e-cards {
-    grid-template-columns: repeat(2, 1fr);
-    bottom: -180px;
-  }
-
-  .comp4e-bottom {
-    padding-top: 220px;
-  }
-
-  .comp4e-bottom-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .comp4e-image-wrap {
-    height: 400px;
-  }
-
-  .comp4e-cards {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    bottom: -200px;
-  }
-
-  .comp4e-bottom {
-    padding-top: 240px;
-    padding-bottom: 60px;
-  }
-
-  .comp4e-bottom-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-}
-
-@media (max-width: 480px) {
-  .comp4e-image-wrap {
-    height: 320px;
-  }
-
-  .comp4e-cards {
-    grid-template-columns: 1fr;
-    bottom: -400px;
-    gap: 8px;
-  }
-
-  .comp4e-bottom {
-    padding-top: 440px;
-  }
-
-  .comp4e-card {
-    padding: 24px 20px;
-  }
-}
-
 /* ===========================
    PILLARS
    =========================== */
@@ -1208,20 +958,6 @@ body {
   font-size: 15px;
   line-height: 1.75;
   color: #555;
-}
-
-@media (max-width: 768px) {
-  .pillars-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .pillar {
-    border-top: 1px solid #e0e0e0;
-  }
-
-  .pillar:first-child {
-    border-top: none;
-  }
 }
 
 /* ===========================
@@ -1334,33 +1070,6 @@ body {
   display: none;
 }
 
-/* ---- Responsive ---- */
-@media (max-width: 768px) {
-  .prime-horizontal-row {
-    flex-wrap: wrap;
-    gap: 40px 0;
-  }
-
-  .prime-card-compact {
-    flex: 0 0 50%;
-    padding: 0 20px;
-  }
-
-  .prime-card-compact+.prime-card-compact::before {
-    display: none;
-  }
-}
-
-@media (max-width: 480px) {
-  .prime-card-compact {
-    flex: 0 0 100%;
-  }
-
-  .prime-icon-sm i {
-    font-size: 32px;
-  }
-}
-
 .fade-in {
   opacity: 0;
   transform: translateY(18px);
@@ -1433,21 +1142,6 @@ body {
   color: var(--off-white);
   text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
   font-weight: 400;
-}
-
-@media (max-width: 768px) {
-  .creed-section {
-    background-attachment: scroll;
-    padding-bottom: 140px;
-  }
-
-  .creed-section::after {
-    height: 140px;
-  }
-
-  .creed-section blockquote {
-    font-size: 16px;
-  }
 }
 
 /* ===========================
@@ -1623,26 +1317,6 @@ body {
   color: rgba(255, 255, 255, 0.75);
 }
 
-/* ---- Responsive ---- */
-@media (max-width: 768px) {
-  .team-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .team-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-
-  .team-photo-overlay h4 {
-    font-size: 13px;
-  }
-}
-
-
 /* ===========================
    WHERE WE OPERATE — Map
    =========================== */
@@ -1804,50 +1478,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .chapters-map-grid {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-
-  .chapters-map-img {
-    order: 1;
-  }
-
-  .chapters-stats {
-    order: 2;
-  }
-
-  .stats-grid {
-    gap: 16px;
-  }
-
-  .stat-chip {
-    padding: 20px 16px;
-  }
-
-  .stat-chip .stat-number {
-    font-size: 38px;
-  }
-}
-
-@media (max-width: 640px) {
-  .stats-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .chapter-badge {
-    font-size: 11px;
-    padding: 6px 14px;
-  }
-
-  .chapters-stats-header h3 {
-    font-size: 28px;
-  }
-}
-
 /* ===========================
    FORMATION
    =========================== */
@@ -1982,94 +1612,6 @@ body {
 .formation-body em {
   color: #555;
   font-style: italic;
-}
-
-/* ---- RESPONSIVE ---- */
-@media (max-width: 1024px) {
-  .formation-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .formation {
-    padding: 60px 0;
-  }
-
-  .formation-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .formation-card {
-    padding: 32px 24px 36px;
-  }
-
-  .formation-tag {
-    font-size: 16px;
-  }
-
-  .formation-body {
-    padding-right: 0;
-    margin-bottom: 20px;
-  }
-
-  /* Show icons on mobile but smaller */
-  .formation-icon {
-    position: relative;
-    bottom: auto;
-    right: auto;
-    margin-top: 16px;
-    opacity: 0.3;
-    width: 40px;
-    height: 40px;
-  }
-
-  .formation-icon i {
-    font-size: 36px;
-  }
-
-  .formation-card:hover .formation-icon {
-    opacity: 0.3;
-  }
-}
-
-@media (max-width: 480px) {
-  .formation-card {
-    padding: 28px 20px 32px;
-  }
-
-  .formation-tag {
-    font-size: 15px;
-  }
-
-  .formation-subtag {
-    font-size: 10px;
-    letter-spacing: 1.5px;
-  }
-
-  .formation-body p {
-    font-size: 13px;
-    line-height: 1.6;
-  }
-
-  .formation-phase {
-    width: 38px;
-    height: 38px;
-    font-size: 12px;
-    top: -15px;
-    right: 16px;
-  }
-
-  .formation-icon {
-    width: 36px;
-    height: 36px;
-  }
-
-  .formation-icon i {
-    font-size: 32px;
-  }
 }
 
 /* Optional: Add animation for cards */
@@ -2306,43 +1848,6 @@ body {
   border-radius: 4px;
 }
 
-/* ---- Responsive ---- */
-@media (max-width: 768px) {
-  .project-slide {
-    flex: 0 0 240px;
-    height: 300px;
-  }
-
-  .project-slide--wide {
-    flex: 0 0 300px;
-  }
-
-  .carousel-btn {
-    width: 36px;
-    height: 36px;
-  }
-
-  .carousel-btn-prev {
-    left: 6px;
-  }
-
-  .carousel-btn-next {
-    right: 6px;
-  }
-}
-
-@media (max-width: 480px) {
-  .project-slide {
-    flex: 0 0 200px;
-    height: 260px;
-  }
-
-  .project-slide--wide {
-    flex: 0 0 260px;
-  }
-}
-
-
 /* ===========================
    CONTACT
    =========================== */
@@ -2524,52 +2029,6 @@ body {
   display: block;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .chapters-contact-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  .chapter-contact-card {
-    padding: 24px;
-  }
-  
-  .chapter-contact-header h3 {
-    font-size: 24px;
-  }
-  
-  .chapter-contact-header h4 {
-    font-size: 20px;
-  }
-  
-  .chapter-contact-details {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  
-  .contact-map-wrap iframe {
-    height: 280px;
-  }
-}
-
-@media (max-width: 480px) {
-  .chapter-contact-header {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .contact-detail-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .contact-detail-item i {
-    margin-bottom: 8px;
-  }
-}
-
 /* ===========================
    BE INVOLVED
    =========================== */
@@ -2682,7 +2141,6 @@ body {
 }
 
 /* STEPS */
-
 .donation-steps {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -2725,40 +2183,6 @@ body {
   font-size: 14px;
   line-height: 1.7;
   color: #555;
-}
-
-/* ===========================
-   RESPONSIVE
-   =========================== */
-
-@media (max-width: 900px) {
-
-  .involvement-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .donation-steps {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 640px) {
-
-  .involvement-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .involve-card {
-    padding: 28px 22px;
-  }
-
-  .gcash-card {
-    padding: 18px;
-  }
-
-  .donation-step {
-    padding: 20px;
-  }
 }
 
 /* ===========================
@@ -2884,8 +2308,415 @@ body {
   letter-spacing: 1px;
 }
 
-/* ---- Responsive ---- */
+/* ===========================
+   SCROLL ANIMATIONS
+   =========================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   ========== ALL RESPONSIVE DESIGN ==========
+   ============================================ */
+
+/* Large Tablets / Small Desktops (1024px and below) */
+@media (max-width: 1024px) {
+  .principles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .team-card.featured {
+    grid-column: span 3;
+  }
+
+  .comp4e-cards {
+    grid-template-columns: repeat(2, 1fr);
+    bottom: -180px;
+  }
+
+  .comp4e-bottom {
+    padding-top: 220px;
+  }
+
+  .comp4e-bottom-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .formation-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Tablets (900px and below) */
+@media (max-width: 900px) {
+  .about-3col {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .about-3col-item:last-child {
+    grid-column: span 2;
+  }
+
+  .about-stats-icons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 0;
+    padding: 40px 0;
+  }
+
+  .stat-icon-item:nth-child(3)::before {
+    display: none;
+  }
+
+  .stat-icon-item + .stat-icon-item::before {
+    height: 60%;
+    top: 20%;
+  }
+
+  .chapters-map-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .chapters-map-img {
+    order: 1;
+  }
+
+  .chapters-stats {
+    order: 2;
+  }
+
+  .stats-grid {
+    gap: 16px;
+  }
+
+  .stat-chip {
+    padding: 20px 16px;
+  }
+
+  .stat-chip .stat-number {
+    font-size: 38px;
+  }
+
+  .involvement-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .donation-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile Landscape / Small Tablets (768px and below) */
 @media (max-width: 768px) {
+  :root {
+    --section-pad: 64px 0;
+  }
+
+  /* Navbar */
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: var(--dark);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.5rem;
+    gap: 0.5rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 99;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+    padding: 12px 16px;
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
+  /* Hero */
+  .hero {
+    background-attachment: scroll;
+  }
+
+  .hero-line {
+    gap: 12px;
+  }
+
+  .hero-headline .word.normal {
+    font-size: clamp(44px, 12vw, 80px);
+  }
+
+  .hero-headline .word.italic {
+    font-size: clamp(40px, 11vw, 76px);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* About */
+  .about-want-body {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .about-want-img {
+    height: 220px;
+  }
+
+  /* Vision/Mission */
+  .vm-split-panel,
+  .vm-split-panel.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .vm-split-img {
+    height: 220px;
+    order: 0 !important;
+  }
+
+  .vm-split-fade {
+    background: linear-gradient(to bottom, transparent 50%, var(--white) 100%) !important;
+  }
+
+  .vm-split-panel.reverse .vm-split-fade {
+    background: linear-gradient(to bottom, transparent 50%, var(--dark) 100%) !important;
+  }
+
+  .vm-split-text,
+  .vm-split-panel.reverse .vm-split-text {
+    order: 1 !important;
+    padding: 28px 24px;
+  }
+
+  /* Pillars */
+  .pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .pillar {
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .pillar:first-child {
+    border-top: none;
+  }
+
+  /* Principles */
+  .principles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* 4E */
+  .comp4e-image-wrap {
+    height: 400px;
+  }
+
+  .comp4e-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    bottom: -200px;
+  }
+
+  .comp4e-bottom {
+    padding-top: 240px;
+    padding-bottom: 60px;
+  }
+
+  .comp4e-bottom-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  /* Team */
+  .team-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-card.featured {
+    grid-column: span 2;
+  }
+
+  /* Prime Framework */
+  .prime-horizontal-row {
+    flex-wrap: wrap;
+    gap: 40px 0;
+  }
+
+  .prime-card-compact {
+    flex: 0 0 50%;
+    padding: 0 20px;
+  }
+
+  .prime-card-compact + .prime-card-compact::before {
+    display: none;
+  }
+
+  /* Creed */
+  .creed-section {
+    background-attachment: scroll;
+    padding-bottom: 140px;
+  }
+
+  .creed-section::after {
+    height: 140px;
+  }
+
+  .creed-section blockquote {
+    font-size: 16px;
+  }
+
+  /* Chapters Map */
+  .stats-grid {
+    gap: 16px;
+  }
+
+  /* Formation */
+  .formation {
+    padding: 60px 0;
+  }
+
+  .formation-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .formation-card {
+    padding: 32px 24px 36px;
+  }
+
+  .formation-tag {
+    font-size: 16px;
+  }
+
+  .formation-body {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .formation-icon {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: 16px;
+    opacity: 0.3;
+    width: 40px;
+    height: 40px;
+  }
+
+  .formation-icon i {
+    font-size: 36px;
+  }
+
+  .formation-card:hover .formation-icon {
+    opacity: 0.3;
+  }
+
+  /* Projects Carousel */
+  .project-slide {
+    flex: 0 0 240px;
+    height: 300px;
+  }
+
+  .project-slide--wide {
+    flex: 0 0 300px;
+  }
+
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .carousel-btn-prev {
+    left: 6px;
+  }
+
+  .carousel-btn-next {
+    right: 6px;
+  }
+
+  /* Contact */
+  .chapters-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .chapter-contact-card {
+    padding: 24px;
+  }
+
+  .chapter-contact-header h3 {
+    font-size: 24px;
+  }
+
+  .chapter-contact-header h4 {
+    font-size: 20px;
+  }
+
+  .chapter-contact-details {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .contact-map-wrap iframe {
+    height: 280px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* Footer */
   .footer-inner {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -2904,148 +2735,99 @@ body {
   }
 }
 
-/* ===========================
-   SCROLL ANIMATIONS
-   =========================== */
-.fade-in {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+/* Mobile Phones (640px and below) */
+@media (max-width: 640px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .chapter-badge {
+    font-size: 11px;
+    padding: 6px 14px;
+  }
+
+  .chapters-stats-header h3 {
+    font-size: 28px;
+  }
+
+  .involvement-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .involve-card {
+    padding: 28px 22px;
+  }
+
+  .gcash-card {
+    padding: 18px;
+  }
+
+  .donation-step {
+    padding: 20px;
+  }
 }
 
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ===========================
-   RESPONSIVE
-   =========================== */
-@media (max-width: 1024px) {
-  .principles-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .team-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .team-card.featured {
-    grid-column: span 3;
-  }
-}
-
-@media (max-width: 768px) {
-  :root {
-    --section-pad: 64px 0;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-links {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    right: 0;
-    background: var(--dark);
-    flex-direction: column;
-    padding: 24px;
-    gap: 4px;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    z-index: 99;
-  }
-
-  .nav-links.open {
-    transform: translateX(0);
-  }
-
-  .nav-links a {
-    font-size: 16px;
-    padding: 12px 16px;
-    width: 100%;
-    display: block;
-  }
-
-  .hero-headline {
-    font-size: clamp(50px, 15vw, 90px);
-  }
-
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .vision-mission {
-    grid-template-columns: 1fr;
-  }
-
-  .about-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .pillars-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .principles-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .team-card.featured {
-    grid-column: span 2;
-  }
-
-  .chapters-list {
-    grid-template-columns: 1fr;
-    gap: 2px;
-  }
-
-  .projects-mosaic {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-  }
-
-  .tile-large {
-    grid-column: span 2;
+/* Small Mobile Phones (600px and below) */
+@media (max-width: 600px) {
+  .about-banner {
     height: 220px;
+    margin-bottom: 40px;
   }
 
-  .tile-sm {
-    height: 160px;
-  }
-
-  .tile-med {
-    grid-column: span 2;
-    height: 160px;
-  }
-
-  .contact-grid {
+  .about-3col {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 24px;
+    margin-bottom: 48px;
   }
 
-  .form-row {
-    grid-template-columns: 1fr;
+  .about-3col-item:last-child {
+    grid-column: span 1;
   }
 
-  .creed-section blockquote {
-    font-size: 18px;
+  .about-stats-icons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-icon-num {
+    font-size: 40px;
+  }
+
+  .stat-icon-item + .stat-icon-item::before {
+    display: none;
   }
 }
 
+/* Extra Small Mobile Phones (480px and below) */
 @media (max-width: 480px) {
+  /* Hero */
+  .hero-line {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .hero-headline .word.normal {
+    font-size: clamp(38px, 13vw, 60px);
+  }
+
+  .hero-headline .word.italic {
+    font-size: clamp(34px, 12vw, 56px);
+  }
+
   .hero-actions {
     flex-direction: column;
   }
 
+  /* Team */
+  .team-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .team-photo-overlay h4 {
+    font-size: 13px;
+  }
+
   .team-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -3056,5 +2838,108 @@ body {
 
   .about-stats {
     grid-template-columns: 1fr;
+  }
+
+  /* 4E */
+  .comp4e-image-wrap {
+    height: 320px;
+  }
+
+  .comp4e-cards {
+    grid-template-columns: 1fr;
+    bottom: -400px;
+    gap: 8px;
+  }
+
+  .comp4e-bottom {
+    padding-top: 440px;
+  }
+
+  .comp4e-card {
+    padding: 24px 20px;
+  }
+
+  /* Prime Framework */
+  .prime-card-compact {
+    flex: 0 0 100%;
+  }
+
+  .prime-icon-sm i {
+    font-size: 32px;
+  }
+
+  /* Formation */
+  .formation-card {
+    padding: 28px 20px 32px;
+  }
+
+  .formation-tag {
+    font-size: 15px;
+  }
+
+  .formation-subtag {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .formation-body p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .formation-phase {
+    width: 38px;
+    height: 38px;
+    font-size: 12px;
+    top: -15px;
+    right: 16px;
+  }
+
+  .formation-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .formation-icon i {
+    font-size: 32px;
+  }
+
+  /* Projects Carousel */
+  .project-slide {
+    flex: 0 0 200px;
+    height: 260px;
+  }
+
+  .project-slide--wide {
+    flex: 0 0 260px;
+  }
+
+  /* Contact */
+  .chapter-contact-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-detail-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-detail-item i {
+    margin-bottom: 8px;
+  }
+
+  .contact-item {
+    grid-template-columns: 36px 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .contact-item strong {
+    grid-column: 2;
+  }
+
+  .contact-item p {
+    grid-column: 2;
   }
 }
